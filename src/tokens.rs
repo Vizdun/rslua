@@ -131,6 +131,7 @@ impl TokenType {
             TokenType::For => Some(String::from("for")),
             TokenType::Function => Some(String::from("function")),
             TokenType::Goto => Some(String::from("goto")),
+            TokenType::IDiv => Some(String::from("//")),
             TokenType::If => Some(String::from("if")),
             TokenType::In => Some(String::from("in")),
             TokenType::Local => Some(String::from("local")),
@@ -143,7 +144,63 @@ impl TokenType {
             TokenType::True => Some(String::from("true")),
             TokenType::Until => Some(String::from("until")),
             TokenType::While => Some(String::from("while")),
-            _ => None,
+            TokenType::Concat => Some(String::from("..")),
+            TokenType::Dots => Some(String::from("...")),
+            // ==
+            TokenType::Eq => Some(String::from("==")),
+            // >=
+            TokenType::Ge => Some(String::from(">=")),
+            // <=
+            TokenType::Le => Some(String::from("<=")),
+            // ~=
+            TokenType::Ne => Some(String::from("~=")),
+            // <<
+            TokenType::Shl => Some(String::from("<<")),
+            // >>
+            TokenType::Shr => Some(String::from(">>")),
+            // ::
+            TokenType::DbColon => Some(String::from("::")),
+            TokenType::Eos => Some(String::from("\n")),
+            // () [] {}
+            TokenType::Lp => Some(String::from("(")),
+            TokenType::Rp => Some(String::from(")")),
+            TokenType::Ls => Some(String::from("[")),
+            TokenType::Rs => Some(String::from("]")),
+            TokenType::Lb => Some(String::from("{")),
+            TokenType::Rb => Some(String::from("}")),
+            // + - * / % ^ #
+            TokenType::Add => Some(String::from("+")),
+            TokenType::Minus => Some(String::from("-")),
+            TokenType::Mul => Some(String::from("*")),
+            TokenType::Div => Some(String::from("/")),
+            TokenType::Mod => Some(String::from("%")),
+            TokenType::Pow => Some(String::from("^")),
+            TokenType::Len => Some(String::from("#")),
+            // =
+            TokenType::Assign => Some(String::from("=")),
+            // < >
+            TokenType::Lt => Some(String::from("<")),
+            TokenType::Gt => Some(String::from(">")),
+            // & | ~
+            TokenType::BAnd => Some(String::from("&")),
+            TokenType::BOr => Some(String::from("|")),
+            TokenType::BXor => Some(String::from("~")),
+            // : , ;
+            TokenType::Colon => Some(String::from(":")),
+            TokenType::Comma => Some(String::from(",")),
+            TokenType::Semi => Some(String::from(";")),
+            // .
+            TokenType::Attr => Some(String::from(".")),
+            // single line coment
+            // float number
+            TokenType::Flt |
+            // int number
+            TokenType::Int |
+            // name
+            TokenType::Name |
+            // string literal
+            TokenType::String |
+            TokenType::SComment | TokenType::MComment => None,
         }
     }
 }
