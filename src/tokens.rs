@@ -1,6 +1,6 @@
 use crate::types::{FloatType, IntType, Source};
 
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, PartialOrd)]
 pub enum TokenType {
     And,
     Break,
