@@ -118,6 +118,34 @@ impl TokenType {
             _ => None,
         }
     }
+
+    pub fn to_keyword(t: TokenType) -> Option<String> {
+        match t {
+            TokenType::And => Some(String::from("and")),
+            TokenType::Break => Some(String::from("break")),
+            TokenType::Do => Some(String::from("do")),
+            TokenType::Else => Some(String::from("else")),
+            TokenType::ElseIf => Some(String::from("elseif")),
+            TokenType::End => Some(String::from("end")),
+            TokenType::False => Some(String::from("false")),
+            TokenType::For => Some(String::from("for")),
+            TokenType::Function => Some(String::from("function")),
+            TokenType::Goto => Some(String::from("goto")),
+            TokenType::If => Some(String::from("if")),
+            TokenType::In => Some(String::from("in")),
+            TokenType::Local => Some(String::from("local")),
+            TokenType::Nil => Some(String::from("nil")),
+            TokenType::Not => Some(String::from("not")),
+            TokenType::Or => Some(String::from("or")),
+            TokenType::Repeat => Some(String::from("repeat")),
+            TokenType::Return => Some(String::from("return")),
+            TokenType::Then => Some(String::from("then")),
+            TokenType::True => Some(String::from("true")),
+            TokenType::Until => Some(String::from("until")),
+            TokenType::While => Some(String::from("while")),
+            _ => None,
+        }
+    }
 }
 
 impl From<u8> for TokenType {
